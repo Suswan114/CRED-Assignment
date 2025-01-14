@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:backgroundTint="#132952"
+    android:background="@xml/top_cornered"
+    >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/first_line_payment_page"
+        android:textSize="20dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:text="where should we send the money?"
+        android:layout_margin="25dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/first_line_payment_page"
+        app:layout_constraintStart_toStartOf="@id/first_line_payment_page"
+        android:id="@+id/second_line_payment_page"
+        android:textSize="14dp"
+        android:textColor="#7AFFFFFF"
+        android:text="amount will be credited to this bank account. EMI will also be debited from this bank account"
+        android:layout_marginTop="5dp"
+        android:layout_marginHorizontal="25dp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/bank_card"
+        app:layout_constraintTop_toBottomOf="@id/second_line_payment_page"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="35dp"
+        android:layout_marginHorizontal="25dp"
+        android:clickable="true"
+        android:backgroundTint="#132952">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/bank_logo"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="2dp"
+            android:src="@drawable/hdfc"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bank_name"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/bank_logo"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="15dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            android:text="HDFC Bank"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/account_number"
+            app:layout_constraintTop_toBottomOf="@id/bank_name"
+            app:layout_constraintStart_toEndOf="@id/bank_logo"
+            android:layout_marginStart="15dp"
+            android:textColor="@color/white"
+            android:textSize="14dp"
+            android:text="5010023233232"/>
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="16dp"
+            android:id="@+id/bank1_circle"
+            app:cardCornerRadius="12dp"
+            android:backgroundTint="#00D6D6D6"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:strokeWidth="1dp"
+            android:layout_marginEnd="25dp"
+            app:strokeColor="@color/white">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="3dp"
+                android:id="@+id/card2_tick"
+                android:visibility="visible"
+                android:src="@drawable/baseline_done_24"
+                app:tint="@color/white" />
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:cardCornerRadius="12dp"
+        android:backgroundTint="#00D6D6D6"
+        app:layout_constraintTop_toBottomOf="@id/bank_card"
+        app:layout_constraintStart_toStartOf="@id/bank_card"
+        app:strokeWidth="1dp"
+        android:id="@+id/change_account"
+        android:clickable="true"
+        app:strokeColor="@color/white">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginVertical="10dp"
+            android:layout_marginHorizontal="15dp"
+            android:textColor="@color/white"
+            android:textSize="14dp"
+            android:id="@+id/change_account_text"
+            android:textStyle="bold"
+            android:text=""/>
+    </com.google.android.material.card.MaterialCardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

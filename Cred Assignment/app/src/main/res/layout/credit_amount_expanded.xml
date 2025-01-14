@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:background="@xml/top_cornered"
+    android:backgroundTint="#07142D"
+    android:visibility="visible">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/first_line_amount_page"
+        android:textSize="20dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:text="header"
+        android:layout_margin="25dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/first_line_amount_page"
+        app:layout_constraintStart_toStartOf="@id/first_line_amount_page"
+        android:id="@+id/second_line_amount_page"
+        android:textSize="14dp"
+        android:text="second line"
+        android:textColor="#7AFFFFFF"
+        android:layout_marginTop="5dp"
+        android:layout_marginHorizontal="25dp" />
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/second_line_amount_page"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:cardCornerRadius="30dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="40dp"
+        android:backgroundTint="@color/white">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@id/enter_amount"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:id="@+id/credit_amount_text"
+                android:textSize="20dp"
+                android:textColor="#949494"
+                android:text="credit amount"
+                app:layout_constraintBottom_toBottomOf="@id/enter_amount"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/enter_amount"
+                app:layout_constraintEnd_toStartOf="@id/enter_amount"
+                android:textSize="26dp"
+                android:textColor="@color/black"
+                android:text="₹"
+                app:layout_constraintBottom_toBottomOf="@id/enter_amount"
+                android:textStyle="bold"/>
+            <me.tankery.lib.circularseekbar.CircularSeekBar
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/seek_bar"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="30dp"
+                app:cs_circle_style = "round"
+                app:cs_progress = "0"
+                app:cs_max = "100"
+                app:cs_negative_enabled = "false"
+                app:cs_move_outside_circle = "false"
+                app:cs_maintain_equal_circle = "true"
+                app:cs_use_custom_radii = "true"
+                app:cs_lock_enabled = "true"
+                app:cs_circle_x_radius = "1000dp"
+                app:cs_circle_y_radius = "1000dp"
+                app:cs_circle_stroke_width = "20dp"
+                app:cs_disable_pointer = "false"
+                app:cs_pointer_stroke_width = "10dp"
+                app:cs_pointer_halo_width = "10dp"
+                app:cs_pointer_halo_border_width = "0dp"
+                app:cs_circle_fill = "#00FFFFFF"
+                app:cs_circle_color = "#54EA5656"
+                app:cs_circle_progress_color = "#E43535"
+                app:cs_pointer_color = "#000000"
+                app:cs_pointer_halo_color = "#E3C31E"
+                app:cs_pointer_halo_color_ontouch = "#FF984A"
+                app:cs_pointer_alpha_ontouch = "10"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:id="@+id/enter_amount"
+                android:textColor="@color/black"
+                android:hint="0"
+                android:textColorHint="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:gravity="center"
+                android:textSize="26dp"
+                android:backgroundTint="@color/black"
+                android:inputType="number"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/enter_amount"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="20dp"
+                android:textStyle="bold"
+                android:id="@+id/interest_rate"
+                android:textColor="@color/black"
+                android:text="*Interest Rate"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:paddingHorizontal="20dp"
+                android:layout_marginBottom="16dp"
+                android:text="footer"
+                android:id="@+id/footer"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:textColor="@color/black" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
